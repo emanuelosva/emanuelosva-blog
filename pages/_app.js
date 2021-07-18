@@ -1,7 +1,13 @@
+import Layout from '../components/layout'
+import ThemeProvider from '../theme/themeProvider'
 import '../styles/globals.css'
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+export default function MyApp({ Component, pageProps }) {
+  return (
+    <ThemeProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </ThemeProvider>
+  )
 }
-
-export default MyApp
