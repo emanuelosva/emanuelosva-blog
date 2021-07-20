@@ -1,13 +1,10 @@
 import React from 'react'
 import Link from 'next/link'
-import useTheme from '@/theme/useTheme'
 import { Header } from './styles'
 
-export default function NavBar() {
-  const { theme, toogleTheme } = useTheme()
-
+export default function NavBar({ toogleTheme }) {
   return (
-    <Header theme={theme}>
+    <Header>
       <button onClick={toogleTheme}></button>
       <nav>
         <Link href='/blog'>Blog</Link>

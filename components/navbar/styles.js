@@ -1,6 +1,9 @@
 import styled from 'styled-components'
 
 export const Header = styled.header`
+  position: sticky;
+  top: 0;
+  z-index: 3;
   max-width: 906px;
   height: auto;
   margin: 0 auto;
@@ -8,6 +11,7 @@ export const Header = styled.header`
   display: flex;
   justify-content: space-between;
   background-color: ${props => props.theme.backgroundColor};
+  opacity: ${props => props.theme.isDark ? '0.93' : '0.96'};
 
   button {
     width: 40px;
@@ -32,8 +36,11 @@ export const Header = styled.header`
 
   a {
     margin: 12px;
+    padding-bottom: 5px;
     font-size: 18px;
     color: ${props => props.theme.color};
+    /* @TODO verify this style (Design) */
+    border-bottom: 3px solid var(--c-many-orange);
     opacity: 0.7;
   }
 
