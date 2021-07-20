@@ -7,7 +7,6 @@
 
 * {
   box-sizing: border-box;
-  font-size: 10px;
 }
 
 html,
@@ -21,4 +20,44 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+pre {
+  padding: 14px 16px;
+  background-color: #22272d;
+  color: #adbac7;
+  border-radius: 6px;
+  overflow: auto;
+}
+
+code {
+  font-size: 16px;
+  color: #adbac7;
+  border-radius: 6px;
+  background-color: #22272d;
+}
+code span:first-child {
+  width: 100%;
+  display: block;
+  padding: 0 0 10px 0;
+  border-bottom: solid 1px #adbac7;
+}
+code span {
+  font-size: 16px;
+  color: #6cb6ff;
+}
+code .hljs-keyword {
+  color: #e56b62;
+}
+code .hljs-title {
+  color: #dcbdfb;
+}
+code .hljs-string {
+  color: #6cb6ff;
+}
+code .hljs-params {
+  color: #F7931A;
+}
+code .hljs-comment {
+  color: #768390;
 }
