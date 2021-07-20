@@ -1,9 +1,9 @@
 import React from 'react'
 import { Container as DivContainer } from './styles'
 
-export default function Container({ children, color = 'inherit' }) {
+export default function Container({ children }) {
   return (
-    <DivContainer color={color}>
+    <DivContainer>
       {children}
     </DivContainer>
   )
