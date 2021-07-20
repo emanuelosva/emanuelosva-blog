@@ -2,15 +2,13 @@ import React from 'react'
 import Image from 'next/image'
 import Container from '@/components/container'
 import Divider from '@/components/divider'
-import useTheme from '@/theme/useTheme'
 import { FooterContainer } from './styles'
 
 export default function Footer() {
-  const { theme } = useTheme()
   return (
-    <Container>
+    <FooterContainer>
       <Divider/>
-      <FooterContainer theme={theme}>
+      <div className='footer-info-container'>
         <div className='copy-container'>
           <p>Copyrigth - {new Date().getFullYear()}</p>
         </div>
@@ -22,7 +20,7 @@ export default function Footer() {
             <Image alt='Twitter' src='/assets/icon-twitter.svg' width='40px' height='40px' />
           </a>
         </div>
-      </FooterContainer>
-    </Container>
+      </div>
+    </FooterContainer>
   )
 }
