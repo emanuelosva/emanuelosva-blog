@@ -2,18 +2,18 @@ import React from 'react'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
 import Container from '@/components/container'
-import useTheme from '@/theme/useTheme'
-import { MainContainer } from './styles'
+import { Main } from './styles'
 
-export default function Layout({ children }) {
-  const { theme } = useTheme()
+export default function Layout({ children, toogleTheme }) {
   return (
-    <MainContainer theme={theme}>
-      <Navbar/>
-      <main>
-        <Container>{children}</Container>
-      </main>
+    <>
+      <Navbar toogleTheme={toogleTheme} />
+      <Main>
+        <Container>
+          {children}
+        </Container>
+      </Main>
       <Footer/>
-    </MainContainer>
+    </>
   )
 }
