@@ -36,7 +36,7 @@ code {
   border-radius: 6px;
   background-color: #22272d;
 }
-code span:first-child {
+code .hljs-comment:first-child {
   width: 100%;
   display: block;
   padding: 0 0 10px 0;
