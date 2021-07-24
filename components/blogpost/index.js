@@ -1,12 +1,13 @@
 import React from 'react'
-import Image from 'next/image'
+import PropTypes from 'prop-types'
+import BlurImage from '@/components/blogImage'
 import Container from '@/components/container'
 import Avatar from '@/components/avatar'
-import formateDateToString from '@/lib/formateDateToString'
+import formatDateToString from '@/lib/formatDateToString'
 import { Blog as BlogContainer, Article } from './styles'
 
 export default function Blog({ title, publishedAt, author, minutesToRead, views, htmlSource, image }) {
-  const date = formateDateToString(publishedAt)
+  const date = formatDateToString(publishedAt)
 
   return (
     <Container>
@@ -21,7 +22,10 @@ export default function Blog({ title, publishedAt, author, minutesToRead, views,
         </section>
         { image?.source && (
           <figure>
-            <Image placeholder='empty' src={image.source} width='540px' height='256px' alt={image.description || 'Cover image'} />
+            <BlurImage
+              src={image.source}
+              alt={image.description || title}
+            />
             {image.description && <p>{image.description}</p>}
           </figure>
         )}
@@ -29,4 +33,23 @@ export default function Blog({ title, publishedAt, author, minutesToRead, views,
       </BlogContainer>
     </Container>
   )
+}
+
+Blog.propTypes = {
+  slug: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  tags: PropTypes.arrayOf(PropTypes.string),
+  publishedAt: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  summary: PropTypes.string,
+  author: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+  }).isRequired,
+  image: PropTypes.shape({
+    source: PropTypes.string,
+    description: PropTypes.string,
+  }),
+  minutesToRead: PropTypes.number,
+  numberOfWords: PropTypes.number,
+  htmlSource: PropTypes.string.isRequired,
 }

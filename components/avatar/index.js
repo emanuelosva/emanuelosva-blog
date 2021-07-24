@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import PropTypes from 'prop-types'
 import { AvatarContainer } from './styles'
 
 export default function Avatar({ image, name }) {
@@ -9,4 +10,9 @@ export default function Avatar({ image, name }) {
       <span>{name}</span>
     </AvatarContainer>
   )
+}
+
+Avatar.propTypes = {
+  image: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
 }

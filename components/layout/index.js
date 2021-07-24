@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
 import Container from '@/components/container'
@@ -16,4 +17,9 @@ export default function Layout({ children, toogleTheme }) {
       <Footer/>
     </>
   )
+}
+
+Layout.propTypes = {
+  children: PropTypes.element.isRequired,
+  toogleTheme: PropTypes.func.isRequired,
 }
