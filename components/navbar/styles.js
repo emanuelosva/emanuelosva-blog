@@ -4,6 +4,7 @@ export const Header = styled.header`
   position: sticky;
   top: 0;
   z-index: 3;
+  width: 100%;
   max-width: 906px;
   height: auto;
   margin: 0 auto;
@@ -16,7 +17,7 @@ export const Header = styled.header`
   button {
     width: 40px;
     height: 40px;
-    margin-right: 10px;
+    margin: auto 10px auto 0;
     background-color: ${props => props.theme.isDark ? '#1f2937' : '#e4e7eb'};
     border: none;
     border-radius: 4px;

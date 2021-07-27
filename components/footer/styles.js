@@ -1,9 +1,13 @@
 import styled from 'styled-components'
 
 export const FooterContainer = styled.footer`
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 100%;
   width: 100%;
   max-width: 790px;
-  margin: 0 auto;
+  margin: 1.5rem auto 0;
   padding: 0 1rem;
   color: ${props => props.theme.color};
   background-color: ${props => props.theme.backgroundColor};
