@@ -4,9 +4,10 @@ import config from '@/config'
 import BlogsSearch from '@/components/blogsSearcher'
 import BlogList from '@/components/blogsList'
 import filterBlogs from '@/lib/filterBlogs'
-import { getBlogsMetadata } from '@/lib/content'
+import { supabase, getBlogsMetadata, logger } from '@/lib'
 
-export default function Blog({ blogs }) {
+export default function Blog({ blogs, mostViewedBlogs }) {
+
   const [filteredBlogs, setFilteredBlogs] = useState(blogs)
   const [search, setSearch] = useState('')
 
@@ -38,7 +39,7 @@ export default function Blog({ blogs }) {
         {!isSearching() && (
           <>
             <h2>Most Popular</h2>
-            <BlogList blogs={blogs} />
+            <BlogList blogs={mostViewedBlogs} />
           </>
         )}
         <br />
@@ -51,8 +52,31 @@ export default function Blog({ blogs }) {
 
 export async function getStaticProps() {
   const blogs = getBlogsMetadata()
+
+  const { data: mostViewedBlogs, error } = await supabase
+    .from('blogs')
+    .select(`
+      slug,
+      title,
+      tags,
+      views,
+      image,
+      publishedAt,
+      summary,
+      minutesToRead,
+      numberOfWords,
+      author (name,image)
+    `)
+    .order('views', { ascending: false })
+    .limit(4)
+
+  if (error) {
+    logger.error(`Error on page.blogs.getStaticProps: ${error.message}`, { stack: error.stack , ...error })
+    throw error
+  }
+
   return {
-    props: { blogs },
-    revalidate: 3600 * 24, // Each 1 day
+    props: { blogs, mostViewedBlogs },
+    revalidate: 3600 * 24 * 2, // Each 2 day
   }
 }
