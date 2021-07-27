@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Head from 'next/head'
 import Blog from '@/components/blogpost'
 import BlogpostLikes from '@/components/blogpostLikes'
+import BlogRelateds from '@/components/blogRelateds'
 import useViews from '@/hooks/useViews'
+import useRelatedBlogs from '@/hooks/useRelatedBlogs'
 import config from '@/config'
+import Api from '@/lib/apiCaller'
 import { getBlogs, getBlogBySlug } from '@/lib/content'
+import storeOrUpdateBlog from '@/lib/store'
 
 export default function BlogPage({
   slug,
@@ -14,9 +18,13 @@ export default function BlogPage({
   summary,
   author,
   minutesToRead,
+  tags,
   htmlSource,
 }) {
   const { views } = useViews(slug)
+  const { relatedArticles, isLoading: isRelatedLoading } = useRelatedBlogs(slug, tags)
+
+  useEffect(() => config.isProduction && Api.incrementViews(slug), [slug])
 
   return (
     <>
@@ -45,6 +53,7 @@ export default function BlogPage({
       />
 
       <BlogpostLikes slug={slug}/>
+      <BlogRelateds blogs={relatedArticles} isLoading={isRelatedLoading} />
     </>
   )
 }
@@ -56,6 +65,8 @@ export async function getStaticProps({ params }) {
   if (!blog) {
     return { notFound: true }
   }
+
+  await storeOrUpdateBlog(blog)
 
   return {
     props: blog,
