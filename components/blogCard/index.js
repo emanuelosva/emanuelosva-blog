@@ -7,6 +7,7 @@ import { BlogCardContainer } from './styles'
 
 export default function BlogCard({ slug, title, image, summary, minutesToRead }) {
   const { views } = useViews(slug)
+  const textViews = views > 1 ? 'views' : 'view'
 
   return (
     <BlogCardContainer>
@@ -15,7 +16,7 @@ export default function BlogCard({ slug, title, image, summary, minutesToRead })
           <BlurImage src={image.source} alt={image.description || title}/>
           <div className='blog-content'>
             <h3>{title}</h3>
-            <p className='blog-views'>{minutesToRead} min read • {views} views</p>
+            <p className='blog-views'>{minutesToRead} min read • {views} {textViews}</p>
             <p className='blog-description'>{summary}</p>
           </div>
         </div>

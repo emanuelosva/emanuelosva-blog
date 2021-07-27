@@ -8,6 +8,7 @@ import { Blog as BlogContainer, Article } from './styles'
 
 export default function Blog({ title, publishedAt, author, minutesToRead, views, htmlSource, image }) {
   const date = formatDateToString(publishedAt)
+  const textViews = views > 1 ? 'views' : 'view'
 
   return (
     <Container>
@@ -18,7 +19,7 @@ export default function Blog({ title, publishedAt, author, minutesToRead, views,
             <Avatar image={author.image} name={author.name}/>
             <span>{' '} / {date}</span>
           </div>
-          <p>{minutesToRead} min read • {views} views</p>
+          <p>{minutesToRead} min read • {views} {textViews}</p>
         </section>
         { image?.source && (
           <figure>

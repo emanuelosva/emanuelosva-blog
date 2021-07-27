@@ -3,7 +3,8 @@ import styled, { css } from 'styled-components'
 export const BlogpostLikesContainer = styled.div`
   width: 100%;
   height: auto;
-  margin: -2rem auto 2rem 0;
+  padding-bottom: 2rem;
+  margin: -2rem auto 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -35,7 +36,11 @@ export const Heart = styled.div`
   `}
 
   @keyframes heart_burst {
-    from { background-position:left; }
-    to { background-position:right; }
+    from {
+      background-position:left;
+    }
+    to {
+      background-position:right;
+    }
   }
 `
