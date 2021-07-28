@@ -1,0 +1,6 @@
+{
+  "public": false,
+  "redirects": [
+    { "source": "/", "destination": "/blog" }
+  ]
+}
