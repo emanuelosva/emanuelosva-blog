@@ -4,6 +4,7 @@ import fetcher from '@/lib/fetcher'
 export default function useViews(slug) {
   const { data, error } = useSWR(`/api/blogs/${slug}/views`, {
     fetcher,
+    revalidateOnMount: true,
     initialData: { views: undefined },
   })
 

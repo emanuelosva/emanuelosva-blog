@@ -4,6 +4,7 @@ import fetcher from '@/lib/fetcher'
 export default function useLikes(slug) {
   const { data, error } = useSWR(`/api/blogs/${slug}/likes`, {
     fetcher,
+    revalidateOnMount: true,
     initialData: { likes: 1 },
   })
 

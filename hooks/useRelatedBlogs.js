@@ -6,6 +6,7 @@ export default function useRelatedBlogs(slug, tags) {
 
   const { data, error } = useSWR(`/api/blogs?tags=${tagsQuery}&limit=4`, {
       fetcher,
+      revalidateOnMount: true,
       initialData: { blogs: null },
   })
 
