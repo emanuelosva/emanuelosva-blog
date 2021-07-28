@@ -35,6 +35,7 @@ export const BlogRelatedsContainer = styled.section`
   .blog-container img {
     height: 120px;
     width: 120px;
+    max-height: 120px;
   }
 
   .blog-container h4 {
@@ -43,12 +44,12 @@ export const BlogRelatedsContainer = styled.section`
 
   .blog-container .tags-container {
     display: flex;
-    flex-wrap: wrap;
     padding-right: 1rem;
   }
 
   .blog-container .tags-container span {
-    margin-right: 4px;
+    margin: 4px;
+    margin-left: 0;
     padding: 2px 4px;
     color: var(--c-many-orange);
     background-color: var(--c-gray-divider);
@@ -72,6 +73,7 @@ export const BlogRelatedsContainer = styled.section`
   @media(max-width: 420px) {
     .blog-container {
       height: 120px;
+      grid-template-columns: 1fr 0fr;
     }
 
     .blog-container img {

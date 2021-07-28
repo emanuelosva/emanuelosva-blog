@@ -5,11 +5,6 @@ export const Blog = styled.div`
   height: auto;
   margin: 0 auto 2rem auto;
 
-  h1 {
-    margin: 0;
-    font-size: 48px;
-  }
-
   .blog-data {
     width: 100%;
     margin-top: 10px;
@@ -32,6 +27,15 @@ export const Blog = styled.div`
 
   .blog-data__author-date span {
     margin-left: 8px;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 48px;
+  }
+
+  li {
+    margin: 0.8rem 0;
   }
 
   figure {
@@ -68,6 +72,7 @@ export const Article = styled.article`
 
   p {
     font-size: 18px;
+    line-height: 1.8rem;
   }
 
   img {
@@ -88,7 +93,8 @@ export const Article = styled.article`
     margin: 5rem 0;
 
     p {
-      font-size: 15px;
+      font-size: 16px;
+      line-height: 1.5rem;
     }
 
     img {
@@ -102,10 +108,6 @@ export const Article = styled.article`
 
   @media(max-width: 420px) {
     margin: 1rem 0;
-
-    p {
-      font-size: 15px;
-    }
 
     img {
       max-width: 200px;

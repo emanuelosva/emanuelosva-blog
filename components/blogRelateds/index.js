@@ -43,7 +43,7 @@ function RelatedBlog({ blog }) {
           <div className='title-container'>
             <h4>{blog.title}</h4>
             <div className='tags-container'>
-              {blog.tags?.map((tag) => <span key={tag}>{tag}</span>)}
+              {blog.tags?.slice(0, 2)?.map((tag) => <span key={tag}>{tag}</span>)}
             </div>
           </div>
           <div className='meta-container'>
@@ -54,8 +54,8 @@ function RelatedBlog({ blog }) {
         <BlogImage
           src={blog.image.source}
           alt={blog.image.description}
-          width='120px'
-          height='120px'
+          width='80px'
+          height='80px'
         />
       </a>
     </Link>
