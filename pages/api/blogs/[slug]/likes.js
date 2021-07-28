@@ -46,7 +46,7 @@ async function incrementBlogLikesCount(req, res) {
 
     if (error) throw error
 
-    const likes = blog?.likes
+    const likes = blog?.likes + 1
     const { error: updateError } = await supabase
       .from('blogs')
       .update({ likes })
