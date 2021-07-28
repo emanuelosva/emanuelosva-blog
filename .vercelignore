@@ -1,0 +1,10 @@
+# Env
+.env.example
+
+# Develop
+.vscode
+.editorconfig
+.eslint
+.gitignore
+
+README.md
