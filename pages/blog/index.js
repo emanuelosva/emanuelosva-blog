@@ -34,7 +34,7 @@ export default function Blog({ blogs, mostViewedBlogs }) {
       </Head>
       <>
         <h1>Blog</h1>
-        <p>Hi, Im many...</p>
+        <p style={{ marginBottom: '2rem', lineHeight: '1.5rem' }}>Hi, {"I'm"} many. This space is dedicated to share with you thoughts on what  {"I'm"} building and learning.</p>
         <BlogsSearch handleChange={handleChange} />
         {!isSearching() && (
           <>
@@ -77,6 +77,6 @@ export async function getStaticProps() {
 
   return {
     props: { blogs, mostViewedBlogs },
-    revalidate: 3600 * 24 * 2, // Each 2 day
+    revalidate: 3600 * 24 * 1, // Each 2 day
   }
 }
