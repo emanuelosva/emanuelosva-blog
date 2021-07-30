@@ -18,7 +18,7 @@ export const BlogCardContainer = styled.article`
 
   .blog-views {
     margin: 0.8rem 0 0.5rem;
-    opacity: 0.6;
+    opacity: 0.8;
   }
 
   @media(max-width: 700px) {
