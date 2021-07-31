@@ -5,7 +5,6 @@ summary: A simple but conscise explanation about how to handle async functions i
 tags:
   - javascript
   - nodejs
-  - tutorials
 image:
   source: https://emanuelosva-blog-images.s3.amazonaws.com/asyn-map-array.png
   description: (Async in array.map)
