@@ -26,7 +26,7 @@ export const Blog = styled.div`
   }
 
   .blog-data__author-date span {
-    margin-left: 8px;
+    margin: 0 8px;
   }
 
   h1 {
@@ -54,6 +54,7 @@ export const Blog = styled.div`
     max-width: 790px;
     min-width: 320px;
     overflow: hidden;
+    border-radius: 0.5rem;
   }
 
   figure p {

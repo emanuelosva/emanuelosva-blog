@@ -16,6 +16,10 @@ export const BlogCardContainer = styled.article`
     margin-bottom: 0;
   }
 
+  img {
+    border-radius: 0.5rem;
+  }
+
   .blog-views {
     margin: 0.8rem 0 0.5rem;
     opacity: 0.8;
