@@ -1,7 +1,7 @@
 ---
-title: Como crear un blog con NextJs y Markdown
+title: Como crear un blog con next js y markdown
 date: 2021-07-22
-summary: Crea tu propio Blog con NextJs + MD y comienza a compartir tus ideas con el mundo.
+summary: Crea tu propio Blog con next + markdown y comienza a compartir tus ideas con el mundo.
 tags:
   - nodejs
   - tutorials
@@ -14,28 +14,28 @@ author:
   image: /assets/author-image.png
 ---
 
-En un mundo de comunicación remota como el que vivimos hoy, escribir es una habilidad fundamental. Tú me dirás que la mayoría lo sabemos hacer, pero hay una brecha gigante entre solo escribir y hacerlo con eficacia.
+En un mundo de comunicación remota como en el que vivimos hoy, escribir es una habilidad fundamental. Tú me dirás que la mayoría lo sabemos hacer, pero hay una brecha gigante entre solo escribir y hacerlo con eficacia.
 
-Escribir con eficacia es poder **hacernos entender** ante otros de una manera clara, ordenada y de ser posible resumida.
+Escribir con eficacia es poder **darnos a entender** ante otros de una manera clara, ordenada y de ser posible resumida.
 
 No hay nada mejor para mejorar nuestras habilidades que practicar, así que aquí te comparto como puedes aprovechar [next-js](https://nextjs.org/) para construir tu blog de manera sencilla y comenzar a compartir tus ideas y conocimientos al mundo.
 
 ## El objetivo
 
-Construir un blog haciendo uso de next-js y algunas otras librerías en el cual podrás escribir tus Posts en Markdown y se traducirán en páginas HTML que todos podrán visitar en línea.
+Construir un blog haciendo uso de next js y algunas otras librerías, en el cual podrás escribir tus posts en formato markdown y se traducirán en páginas HTML que todos podrán visitar en línea.
 
 ## Requisitos
 
-Aunque el proceso es muy sencillo, necitas al menos lo siguiente:
+Aunque el proceso es muy sencillo, necesitas al menos lo siguiente:
 
 - [git](https://git-scm.com/) y [nodejs](https://nodejs.org/es/) instalados
-- Conocimientos básicos de Javascript, css, Ract, next-js y markdown
+- Conocimientos básicos de Javascript, css, Ract, Next js y markdown
 
 ## Primeros pasos
 
 ### Inicialización del proyecto
 
-Primero inicia un proyecto básico de next-js, si tienes experiencia puedes hacerlo desde cero o bien ayudarte con el comando:
+Primero inicia un proyecto básico de Next, si tienes experiencia puedes hacerlo desde cero o bien, ayudarte con el comando:
 
 ```sh
 # Init project
@@ -60,7 +60,9 @@ Tu proyecto se verá algo así:
   |-- yarn.lock
 ```
 
-Necesitaremos dos directorios extras: `lib` que será donde vivirá la lógica para manejar los blogposts y `_blogs_`, el lugar donde crearás cada uno de tus posts en formato markdown.
+Necesitaremos dos directorios extras: 
+- `lib` que será donde vivirá la lógica para manejar los blogposts y 
+- `_blogs_`, el lugar donde crearás cada uno de tus posts en formato markdown.
 
 ```sh
 mkdir lib
@@ -72,7 +74,7 @@ Desde aquí asumiré que tienes un poco de conocimiento en el framewrok, si no e
 
 ### Dependencias
 
-Estas son las dependencias clave que necesitamos para leer los archivos `.md`, trasnformarlos y darles stilos para que puedan ser renderizados por el navegador:
+Estas son las dependencias clave que necesitamos para leer los archivos `.md`, transformarlos y darles estilos para que puedan ser renderizados por el navegador:
 
 - [gray-matter](https://www.npmjs.com/package/gray-matter): Nos ayudará a leer el contenido de los markdown y obtener metadata de ellos como: título, fecha, tags, etc.
 - [marked](https://www.npmjs.com/package/marked): Será con lo que convertiremos el texto markdown en Html.
@@ -93,7 +95,7 @@ Pongamos como punto de partida el siguiente post en markdown:
 ---
 title: My blog title
 slug: my-blog-title-intro
-summary: An awasome summary.
+summary: An awesome summary.
 tags:
   - javascript
   - nodejs
@@ -119,7 +121,7 @@ A list:
 Conclusion text...
 ```
 
-La metadata es la parte que se encuentra entre lineas:
+La metadata es la parte que se encuentra entre líneas:
 
 ```md
 ---
@@ -128,7 +130,7 @@ title: My blog title
 ---
 ```
 
-Son propiedades extras y *ocultas* que le podemos asignar a cada blog en formato [yml](https://geekflare.com/es/yaml-introduction/)
+Son propiedades extras y *ocultas* que le podemos asignar a cada blog en formato [yml](https://geekflare.com/es/yaml-introduction/).
 
 El resto es el contenido del post, lo que será renderizado en el navegador y tus lectores podrán ver.
 
@@ -141,14 +143,14 @@ const source = fs.readFyleSync(pathToBlog, 'utf8')
 const { data, content } = matter(source)
 ```
 
-Cada una de las propiedades se verían así (tomando como ejemplo el blog de test de arrriba):
+Cada una de las propiedades se verían así (tomando como ejemplo el blog de test de arriba):
 
 ```js
 // data
 {
   title: 'My blog title',
   slug: 'my-blog-title-intro',
-  summary: 'An awasome summary.',
+  summary: 'An awesome summary.',
   tags: ['javascript', 'nodejs'],
   image: {
     source: 'https://image-url.png',
@@ -169,7 +171,7 @@ Cada una de las propiedades se verían así (tomando como ejemplo el blog de tes
 
 Vemos que la metadata, nombrada como `data` es un json de la información asociada al post, mientras que el `content` es la versión en string del contenido.
 
-Ahora, ¿cómo transformamos ese string en un `Html` que pueda ser rendereado por el navegador?. Bien, aquí entra en juego la librería `marked`, la cual hace esta tarea de maravilla:
+Ahora, ¿cómo transformamos ese string en un `Html` que pueda ser renderizado por el navegador?. Bien, aquí entra en juego la librería `marked`, la cual hace esta tarea de maravilla:
 
 ```js
 import matter from 'gray-matter'
@@ -191,7 +193,7 @@ function markdownToHtml(mkd) {
 }
 ```
 
-El resultado sería:
+El resultado sería algo así:
 
 ```js
 // html
@@ -209,7 +211,7 @@ El resultado sería:
 `
 ```
 
-Podemos agregar un detalle opcional, que es el tiempo de lectura aproximado de cada post, para hacerlo simplemente usamos:
+Podemos agregar un detalle opcional, que es el tiempo de lectura aproximado de cada post, para hacerlo podemos hacer uso de la librería *reading-time*:
 
 ```js
 import matter from 'gray-matter'
@@ -221,7 +223,7 @@ const { data, content } = matter(source)
 const { minutes } = readingTime(content)
 ```
 
-Bien, ya tenemos una forma de pasar de markdown a un html, ahora, veamos como trabajaría todo esto en conjunto para usarlo dentro de nuestro frontend en next js:
+Bien, ya tenemos una forma de pasar de markdown a un html, ahora, veamos cómo trabajaría todo esto en conjunto para usarlo dentro de nuestro frontend en next js:
 
 ```js
 // lib/content.js
@@ -247,7 +249,7 @@ export function getBlogSlugs() {
   return slugs
 }
 
-// Get all blogs metadata and contente
+// Get all blogs metadata and content
 export function getAllBlogs() {
   const allPaths = fs.readFileSync(DATA_ROOT)
   const blogs = allPaths.map((path) => {
@@ -288,7 +290,7 @@ function markdownToHtml(mkd) {
 }
 ```
 
-Ahora tenemos una manera sencilla de obtener todo nuestro contenido y vertirlo dentro de nuestro proyecto frontend.
+Ahora tenemos una manera simple de obtener todo nuestro contenido para verterlo dentro de nuestro proyecto frontend.
 
 No quiero limitar tu creatividad, así que solo te compartiré la lógica necesaria para generar todas las páginas de posts de manera estática y tú podrás crear tu propio diseño a tu preferencia.
 
@@ -355,8 +357,8 @@ export async function getStaticProps() {
 
 ```
 
-En el ejemplo anterior la función `getStaticProps` se ejecupa en tiempo de `build`. Al construirse tu proyecto se guarda en formato json todo la data generada por `getAllBlogs` (html y metadata de cada blog que tengas en la carpeta `_blogs_`).
-De esta manera en cada request, este json se inyecta como `props` a tu componente de **React** obteniendo un tiempo de respuesta sumamente rápido sin la necesidad de consultar un API externo. Claro, su desventaja es que si quieres modificar un blog, no lo puedes hacer dinámicamente, tendrías que hacer todo un nuevo deploy, pero bueno, es el precio a pagar por la facilidad de poner en producción tu contenido.
+En el ejemplo anterior la función `getStaticProps` se ejecuta en tiempo de `build`. Al construirse tu proyecto se guarda en formato json todo la data generada por `getAllBlogs` (html y metadata de cada blog que tengas en la carpeta `_blogs_`).
+De esta manera en cada request, este json se inyecta como `props` a tu componente de **React** obteniendo una velocidad de carga sumamente rápida sin la necesidad de consultar una API externa. Claro, su desventaja es que si quieres modificar un blog, no lo puedes hacer dinámicamente, tendrías que hacer todo un nuevo deploy, pero bueno, es el precio a pagar por la facilidad de poner en producción tu contenido.
 
 
 Ahora, para generar cada post trabajaremos en `pages/blog/[slug].js`:
@@ -437,7 +439,7 @@ export async function getStaticPaths() {
 }
 ```
 
-En este caso `getStaticPaths` genera todas las rutas a cada uno de nuestros posts, es decir que si dentro del directorio `_blogs_` tenemos 3, llamdos: ****blog-1.md****, ****blog-2.ms**** y ****blog-1.md****
+En este caso `getStaticPaths` genera todas las rutas a cada uno de nuestros posts, es decir que si dentro del directorio `_blogs_` tenemos 3, llamados: ***blog-1.md***, ***blog-2.ms*** y ***blog-1.md***
 
 Estarán disponibles dentro de nuestro sitio las urls:
 
@@ -447,13 +449,13 @@ Estarán disponibles dentro de nuestro sitio las urls:
 
 Cualquier otra ruta /blog/* tendrá una respuesta 404 (Not found).
 
-Como en la parte del index de blogs, `getStaticProps` genera las `props` de cada uno de los paths generados, es decir que, cuando alguién entre a ***/blog/blog-1*** se inyectará dentro del componente como props el título, tags, html, etc, del blog específico, incrementado así la velocidad de respuesta.
+Como en la parte del index de blogs, `getStaticProps` genera las `props` de cada uno de los paths generados, es decir que, cuando alguien entre a ***/blog/blog-1*** se inyectará dentro del componente como props el título, tags, html, etc, del blog específico, incrementado así la velocidad de respuesta.
 
 Como dije antes, este post se limita a compartirte la forma en que puedes cargar todos los datos de tu blog. El diseño te lo dejo a ti para que imprimas todo tu estilo, gustos y personalidad en él.
-Aún así, si quieres ver el como esá construido este blog, con todo gusto lo comparto contigo [aquí](https://github.com/emanuelosva/emanuelosva-blog).
+Aún así, si quieres ver el cémo está construido este blog, con todo gusto lo comparto contigo [aquí](https://github.com/emanuelosva/emanuelosva-blog).
 
 
-## Conlusión
+## Conclusión
 
-Espero esta guía te sirva como una base para comenzar tu propio blog o bien el de tu marca o empresa.
-Práctica el comunicarte claramente, es un skill cada vez más demandado en un mundo de trabajo remoto, yo lo estoy haciendo justo hora al compartirte estas palabras. Así que no esperes más, ya sea porque hay algo que tienes que decirle al mundo o simplemente por diversión comienza a compartir tus ideas, te pude sorprender de a donde puedes llegar.
+Espero que esta guía te sirva como una base para comenzar tu propio blog o bien el de tu marca o empresa.
+Práctica el comunicarte claramente, es un skill cada vez más demandado en un mundo de trabajo remoto, (yo lo estoy haciendo justo hora al compartirte estas palabras). Así que no esperes más, ya sea porque hay algo que tienes que decirle al mundo o simplemente por diversión comienza a compartir tus ideas, te puede sorprender a donde puedes llegar.
