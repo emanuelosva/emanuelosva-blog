@@ -36,10 +36,10 @@ export default function BlogPage({
         <meta name='og:type' content='website' />
         <meta name='og:title' content={`${title} - Many Osorio`} />
         <meta name='og:description' content={summary} />
-        {image?.source && <meta name='og:image' content={image.source} />}
-        {image?.source && <meta name='og:image:height' content='540' />}
-        {image?.source && <meta name='og:image:width' content='540' />}
-        {image?.source && <meta name='og:type' content={`image/${image.source.split('.')[1]}`} />}
+        <meta name='og:image' content={image.source} />
+        <meta name='og:image:height' content='540' />
+        <meta name='og:image:width' content='540' />
+        <meta name='og:type' content='blog' />
       </Head>
 
       <Blog
