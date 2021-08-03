@@ -31,15 +31,21 @@ export default function BlogPage({
       <Head>
         <title>{title} - Many Osorio</title>
         <meta name='description' content={summary}/>
+        {/* Open Grpah */}
         <meta name='og:site_name' content='Many Osorio' />
         <meta name='og:url' content={`${config.BASE_URL}/blog/${slug}`} />
-        <meta name='og:type' content='website' />
+        <meta name='og:type' content='blog' />
         <meta name='og:title' content={`${title} - Many Osorio`} />
         <meta name='og:description' content={summary} />
         <meta name='og:image' content={image.source} />
-        <meta name='og:image:height' content='540' />
-        <meta name='og:image:width' content='540' />
-        <meta name='og:type' content='blog' />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:alt" content={image.description} />
+        {/* Twiter card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${title} - Many Osorio`} />
+        <meta name="twitter:description" content={summary} />
+        <meta name="twitter:url" content={`${config.BASE_URL}/blog/${slug}`} />
+        <meta name="twitter:image" content={image.source} />
       </Head>
 
       <Blog
