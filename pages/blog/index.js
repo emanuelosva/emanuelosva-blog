@@ -34,7 +34,9 @@ export default function Blog({ blogs, mostViewedBlogs }) {
       </Head>
       <>
         <h1>Blog</h1>
-        <p style={{ marginBottom: '2rem', lineHeight: '1.5rem' }}>Hi, {"I'm"} many. This space is dedicated to share with you thoughts on what  {"I'm"} building and learning.</p>
+        <p style={{ marginBottom: '2rem', lineHeight: '1.5rem' }}>
+          Hi, {"I'm"} Many. This space is dedicated to share with you thoughts on what {"I'm"} building and learning.
+        </p>
         <BlogsSearch handleChange={handleChange} />
         {!isSearching() && (
           <>
