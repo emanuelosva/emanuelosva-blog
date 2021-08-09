@@ -10,7 +10,7 @@ export default function BlogImage({ src, alt, width = '540px', height = '256px' 
       width={width}
       height={height}
       placeholder='blur'
-      blurDataURL='/assets/blur-placeholder.png'
+      blurDataURL='/assets/blur-placeholder.webp'
     />
   )
 }
