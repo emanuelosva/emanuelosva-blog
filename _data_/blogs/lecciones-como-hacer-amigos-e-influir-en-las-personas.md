@@ -1,7 +1,7 @@
 ---
 title: 'Qué aprendí del libro: Cómo hacer amigos e influir en las personas'
 date: 2021-08-09
-summary: ¿Cómo hacer amigos e influir en las personas? Ttodo parte del interés genuino por los demás. La base de todo es la empatía. ¿Eres capaz de entender realmente las motivaciones de otras personas?
+summary: ¿Cómo hacer amigos e influir en las personas? Todo parte del interés genuino por los demás. La base de todo es la empatía. ¿Eres capaz de entender realmente las motivaciones de otras personas?
 tags:
   - self-growth
   - life
