@@ -1,6 +1,6 @@
 ---
 title: Como crear un blog con next js y markdown
-date: 2021-07-22
+date: 2021-08-01
 summary: Crea tu propio Blog con next + markdown y comienza a compartir tus ideas con el mundo.
 tags:
   - nodejs
