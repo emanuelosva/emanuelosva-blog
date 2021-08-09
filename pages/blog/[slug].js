@@ -7,8 +7,7 @@ import useViews from '@/hooks/useViews'
 import useRelatedBlogs from '@/hooks/useRelatedBlogs'
 import config from '@/config'
 import Api from '@/lib/apiCaller'
-import { getBlogs, getBlogBySlug } from '@/lib/content'
-import storeOrUpdateBlog from '@/lib/store'
+import { getBlogs, getBlogBySlug, storeOrUpdateBlog } from '@/lib'
 
 export default function BlogPage({
   slug,
@@ -76,7 +75,7 @@ export async function getStaticProps({ params }) {
 
   return {
     props: blog,
-    revalidate: false,
+    revalidate: 3600 * 24, // refresh each one day
   }
 }
 

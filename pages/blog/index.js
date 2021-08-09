@@ -79,6 +79,6 @@ export async function getStaticProps() {
 
   return {
     props: { blogs, mostViewedBlogs },
-    revalidate: 3600 * 24 * 1, // Each 2 day
+    revalidate: 3600 * 24 * 1, // refresh each 1 day
   }
 }
