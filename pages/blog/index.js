@@ -11,7 +11,7 @@ export default function Blog({ blogs, mostViewedBlogs }) {
   const [filteredBlogs, setFilteredBlogs] = useState(blogs)
   const [search, setSearch] = useState('')
 
-  const isSearching = () => search !== ''
+  const isSearching = () => search.trim() !== ''
 
   const handleChange = useCallback((e) => {
     const actualSearch = String(e.target.value).toLowerCase()
