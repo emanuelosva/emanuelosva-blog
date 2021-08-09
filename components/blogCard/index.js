@@ -15,7 +15,7 @@ export default function BlogCard({ slug, title, image, summary, minutesToRead })
         <div className='blog-wrapper'>
           <BlurImage src={image.source} alt={image.description || title}/>
           <div className='blog-content'>
-            <h3>{title}</h3>
+            <a href={`/blog/${slug}`}><h3>{title}</h3></a>
             <p className='blog-views'>{minutesToRead} min read • {views} {textViews}</p>
             <p className='blog-description'>{summary}</p>
           </div>
