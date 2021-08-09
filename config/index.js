@@ -6,6 +6,7 @@ const config = {
   SITE_NAME: 'Many Osorio',
   /** @TODO create og and seo description */
   SEO_DESCRIPTION: 'Programming, nodejs, backend, frontend',
+  SEO_KEY_WORDS: 'many osorio, emanuel osorio, emanuelosva, aprender programación, software developer',
   BLOG_DESCRIPTION: 'Opinion, tutorials and discussions about software development.',
 
   TAGS: ['nodejs', 'backend', 'frontend', 'database', 'tutorials', 'life', 'self-growth', 'business'],

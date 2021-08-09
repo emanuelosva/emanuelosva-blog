@@ -31,6 +31,7 @@ export default function Blog({ blogs, mostViewedBlogs }) {
         <meta name='og:type' content='website' />
         <meta name='og:title' content={config.SITE_TITLE} />
         <meta name='og:description' content={config.BLOG_DESCRIPTION} />
+        <meta name="keywords" content={config.SEO_KEY_WORDS} />
       </Head>
       <>
         <h1>Blog</h1>
