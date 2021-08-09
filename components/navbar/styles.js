@@ -14,7 +14,7 @@ export const Header = styled.header`
   background-color: ${props => props.theme.backgroundColor};
   opacity: ${props => props.theme.isDark ? '0.93' : '0.96'};
 
-  button {
+  .theme-button {
     width: 40px;
     height: 40px;
     margin: auto 10px auto 0;
@@ -29,6 +29,7 @@ export const Header = styled.header`
     background-position: center;
     background-repeat: no-repeat;
     background-size: 15px;
+    cursor: pointer;
   };
 
   nav {

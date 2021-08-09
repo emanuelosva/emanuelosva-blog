@@ -6,7 +6,7 @@ import { Header } from './styles'
 export default function NavBar({ toogleTheme }) {
   return (
     <Header>
-      <button name='Change theme' onClick={toogleTheme}></button>
+      <div className='theme-button' name='Change theme' onClick={toogleTheme}></div>
       <nav>
         <Link href='/blog'>Blog</Link>
         <Link href='/about'>About</Link>
